@@ -1,0 +1,9 @@
+<h3>{{ xlist.myTitle }}</h3>
+<ul>
+  <li ng-repeat="item in xlist.items">
+    {{ item.name }} of {{ item.short_name }} {{ item.description }}
+    <button ng-click="xlist.onRemove({index: $index});">Don't want this one</button>
+  </li>
+</ul>
+<div class="error" ng-if="xlist.isEmptyList()">Nothing Found!</div>
+
