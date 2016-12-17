@@ -1,0 +1,6 @@
+<ul>
+  <li ng-repeat="cat in $ctrl.yitems"
+    ui-sref="items({catItem: cat.short_name})">
+    {{ cat.name }}
+  </li>
+</ul>
