@@ -19,7 +19,12 @@ function MenuDataService($http, ApiBasePath) {
 
   // Elegant simple version
   service.getItemsForCategory = function(categoryShortName) {
-    return $http.get(ApiBasePath + "/menu_items.json?category=" + categoryShortName)
+    //return $http.get(ApiBasePath + "/menu_items.json?category=" + categoryShortName)
+    var config = {};
+    if (categoryShortName) {
+      config.params = {'category': categoryShortName};
+    }
+    return $http.get(ApiBasePath + "/menu_items.json", config)    
       .then(function(response) {
         return response.data.menu_items;
       });
