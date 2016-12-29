@@ -1,0 +1,28 @@
+    <h1>My Info</h1>
+
+    <div ng-if="myInfoCtrl.flag === false"
+        <a ui-sref="public.signup">
+          <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Not signed up yet.  Sign up now!"</a>      
+    </div>
+
+    <fieldset ng-if="myInfoCtrl.flag === true">
+      <legend>My Info</legend>
+      
+      First Name: {{ myInfoCtrl.user.firstName }}
+      <br>
+      Last Name: {{ myInfoCtrl.user.lastName }}
+      <br>
+      E-Mail: {{ myInfoCtrl.user.email }}
+      <br>
+      Phone: {{ myInfoCtrl.user.phone }}
+      <br><br>
+      Favorite Dish: {{ myInfoCtrl.user.favorite }}
+      <br>
+      {{ myInfoCtrl.user.favoriteName }}
+      <br>
+      {{ myInfoCtrl.user.favoriteDescription }}
+      <br>
+
+      <img ng-src={{myInfoCtrl.pic}}>
+
+    </fieldset>
