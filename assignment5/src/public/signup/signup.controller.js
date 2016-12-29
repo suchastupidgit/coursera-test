@@ -21,12 +21,15 @@ function SignUpController($http) {
         window.localStorage.setItem('Hoowah', s);
 
         console.log("We're Back Baby!");
+        signUpCtrl.favoriteError = false;
+        signUpCtrl.completed = true;
       },
       function error(response) {
          console.log("E R R O R !");
+         signUpCtrl.favoriteError = true;
+         signUpCtrl.completed = false;
       });
 
-    signUpCtrl.completed = true;
   };
 }
 

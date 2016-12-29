@@ -63,7 +63,12 @@
           <span ng-if="regForm.favorite.$error.maxlength && regForm.favorite.$touched">
             Favorite must not be longer than 3 characters
           </span>
-          <br>
+
+          <span ng-if="signUpCtrl.favoriteError && regForm.favorite.$touched">
+            No such menu number exists
+          </span>
+
+           <br>
 
         <button
           ng-disabled="regForm.$invalid"
@@ -72,13 +77,12 @@
           <div style="margin-top: 10px;">
             Form valid? {{ regForm.$valid }}
           </div>
+
+          <div id="info" ng-if="signUpCtrl.completed">
+            <br>
+            Your information has been saved.
+            <br>
+          </div>
+          
       </form>
     </fieldset>
-
-    <div id="info" ng-if="signUpCtrl.completed">
-      Firstname: {{ signUpCtrl.user.firstName }}<br>
-      Lastname: {{ signUpCtrl.user.lastName }}<br>
-      Email: {{ signUpCtrl.user.email }} <br>
-      Phone: {{ signUpCtrl.user.phone }} <br>
-      Favorite: {{ signUpCtrl.user.favorite }}
-    </div>
